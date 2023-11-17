@@ -4,7 +4,7 @@ A repository to store infrastructure managment scripts.
 
 ### Usage
 
-Run webserver script on a target system by ssh to its ip.
+Run webserver script on a target system by using curl|bash.
 
-`cat webserver.sh | ssh -t joe@192.168.1.184`
+`curl https://raw.githubusercontent.com/joemama597/infra-scripts/main/webserver.sh | bash`
 
