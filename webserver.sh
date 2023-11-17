@@ -33,3 +33,11 @@ else
   echo "installing git"
   sudo apt install -y git
 fi
+
+if (htop --version >> infra.log)
+then
+  echo "htop already installed"
+else
+  echo "installing htop"
+  sudo apt install -y htop
+fi
