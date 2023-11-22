@@ -35,4 +35,6 @@ else
 fi
 
 # create ssh key
+git config --global user.email "thecoolfoe11@gmail.com"
+git config --global user.name "Joseph Hernandez"
 # install hypervisor (multipass)
