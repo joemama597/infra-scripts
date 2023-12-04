@@ -39,7 +39,7 @@ then
   echo "code already installed"
 else
   echo "installing code"
-  sudo snap install code
+  sudo snap install --classic code
 fi
 
 if (stat $HOME/.ssh/id_ed25519)
