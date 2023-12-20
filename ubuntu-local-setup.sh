@@ -50,6 +50,15 @@ else
   ssh-keygen -t ed25519 -f "$HOME/.ssh/id_ed25519" -N '' <<< y
 fi
 
+if (sudo -l -U joe | grep '(ALL) NOPASSWD: ALL')
+then
+  echo "NOPASSWD already in affect"
+else
+  echo "adding NOPASSWD to user:joe"
+  echo "joe  ALL=(ALL) NOPASSWD:ALL" | sudo tee /etc/sudoers.d/joe
+fi
+
+
 if (git config --get --global user.email | grep 'thecoolfoe11@gmail.com')
 then
   echo "git config email already set to thecoolfoe11@gmail.com"
