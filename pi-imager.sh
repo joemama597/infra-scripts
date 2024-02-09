@@ -1,6 +1,5 @@
 #!/bin/bash
 
-
 if (rpi-imager --version)
 then
   echo "rpi imager already installed"
