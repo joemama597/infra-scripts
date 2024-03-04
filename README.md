@@ -8,12 +8,13 @@ Run webserver script on a target system by using curl|bash.
 
 `curl https://raw.githubusercontent.com/joemama597/infra-scripts/main/webserver.sh | bash`
 
-## minecraft 
+run local vm:
 
-bash minecraft.sh
+`VM_NAME=vm-01 bash scripts/create-vm.sh`
 
-screen -ls to list screen
+deploy docker compose on vm:
 
-screen -rd to attach to screen
-
-ctrl a + d to detatch
+```shell
+bash scripts/docker.sh
+sudo docker compose -f compose/docker-compose.yml up
+```
