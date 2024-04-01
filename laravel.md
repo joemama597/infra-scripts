@@ -1,0 +1,1 @@
+bash create-vm.sh && multipass transfer laravel.sh local-vm: && multipass shell local-vm 
