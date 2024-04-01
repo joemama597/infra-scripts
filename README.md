@@ -22,3 +22,7 @@ deploy docker compose on vm:
 bash scripts/docker.sh
 sudo docker compose -f compose/docker-compose.yml up
 ```
+
+##
+libre potato 
+`https://distro.libre.computer/ci/ubuntu/22.04/`
