@@ -74,3 +74,11 @@ else
   echo "setting username to Joseph Hernandez"
   git config --global user.name "Joseph Hernandez"
 fi
+
+if (rpi-imager --version)
+then
+  echo "rpi imager already installed"
+else
+  echo "installing rpi-imager"
+  sudo apt install -y  rpi-imager
+fi
