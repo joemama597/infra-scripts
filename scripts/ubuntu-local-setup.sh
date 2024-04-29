@@ -74,14 +74,3 @@ else
   echo "setting username to Joseph Hernandez"
   git config --global user.name "Joseph Hernandez"
 fi
-
-# install hypervisor (multipass)
-if (multipass --version >> infra.log)
-then
-  echo "multipass already installed"
-else
-  echo "installing multipass"
-  sudo snap refresh snapd
-  sudo snap install multipass
-  sleep 5
-fi
