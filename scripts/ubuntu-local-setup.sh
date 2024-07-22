@@ -74,3 +74,20 @@ else
   echo "setting username to Joseph Hernandez"
   git config --global user.name "Joseph Hernandez"
 fi
+
+if (gh --version)
+then
+  echo "gh already installed"
+else
+  echo "installing gh"
+  sudo apt install -y gh
+fi
+
+if (gh auth status)
+then
+  echo "gh already authenticated"
+else
+  echo "authenticating gh"
+  gh auth login
+fi
+
