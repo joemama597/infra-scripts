@@ -74,3 +74,19 @@ else
   echo "setting username to Joseph Hernandez"
   git config --global user.name "Joseph Hernandez"
 fi
+
+if (stat discord-0.0.62.deb)
+then 
+  echo "discord-0.0.62.deb already downloaded"
+else
+  echo "downloading discord-0.0.62.deb"
+  curl -OJL https://dl.discordapp.net/apps/linux/0.0.62/discord-0.0.62.deb
+fi
+
+if (dpkg -s discord)
+then
+  echo "discord already installed"
+else
+  echo "installing discord"
+  sudo dpkg -i discord-0.0.62.deb
+fi
