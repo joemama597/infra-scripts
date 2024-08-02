@@ -75,18 +75,11 @@ else
   git config --global user.name "Joseph Hernandez"
 fi
 
-if (stat discord-0.0.62.deb)
-then 
-  echo "discord-0.0.62.deb already downloaded"
-else
-  echo "downloading discord-0.0.62.deb"
-  curl -OJL https://dl.discordapp.net/apps/linux/0.0.62/discord-0.0.62.deb
-fi
-
-if (dpkg -s discord)
+# ensure that Discord is at the current version
+if (dpkg --compare-versions $(dpkg -s discord | grep Version | awk '{ print $2 }') eq $(basename $(dirname $(curl -LIs 'https://discord.com/api/download?platform=linux&format=deb' | grep location | awk '{ print $2 }'))))
 then
-  echo "discord already installed"
+  echo "discord is up to date!"
 else
-  echo "installing discord"
-  sudo dpkg -i discord-0.0.62.deb
+  curl -OJL $(curl -LIs 'https://discord.com/api/download?platform=linux&format=deb' | grep location | awk '{ print $2 }' | tr -d '\r') 
+  sudo dpkg -i $(basename $(curl -LIs 'https://discord.com/api/download?platform=linux&format=deb' | grep location | awk '{ print $2 }') | tr -d '\r')
 fi
