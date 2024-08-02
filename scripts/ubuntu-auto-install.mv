@@ -1,0 +1,3 @@
+# Auto install command
+
+`linux /casper/vmlinuz autoinstall ds=nocloud-net\;s=http://192.168.10.10:3003/ ---`
